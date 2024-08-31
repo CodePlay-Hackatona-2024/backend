@@ -13,7 +13,7 @@ export class LoginUserService {
   ): Promise<Result<string, string>> {
     const encrypted_password = await Encrypt.hash_password(password);
     const existing_user = await this.database.user.findUnique({
-        where: { email, password: encrypted_password },
+        where: { email },
     });
     if (!existing_user) {
       return Err('Informações de login inválidas');
