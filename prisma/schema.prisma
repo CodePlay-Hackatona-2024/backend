@@ -27,7 +27,7 @@ model Event {
   description String
   date        DateTime
   capacity    Int
-  reward     Int?
+  reward     Int
   type        String
   organizer   User?           @relation(fields: [organizerId], references: [id])
   organizerId String?

@@ -17,20 +17,44 @@ export class CreateEventService {
             return Err('Invalid date format');
         }
 
-        const createdEvent = await this.database.event.create({
-            data: {
-                title: data.title,
-                description: data.description,
-                date: formattedDate.toJSDate(),
-                capacity: data.capacity,
-                type: data.type,
-                // organizer: {
-                //     connect: {
-                //         id: data.organizerId
-                //     }
-                // }
-            }
-        });
-        return Ok('Evento criado com sucesso');
+        // Convert the event type to lower case for case-insensitive comparison
+        const eventType = data.type.toLowerCase();
+
+        let reward: number;
+        switch (eventType) {
+            case 'simulação':
+                reward = 50;
+                break;
+            case 'treinamento':
+                reward = 30;
+                break;
+            case 'doação':
+            case 'mutirão':
+                reward = 20;
+                break;
+            default:
+                return Err('Invalid event type');
+        }
+
+        try {
+            const createdEvent = await this.database.event.create({
+                data: {
+                    title: data.title,
+                    description: data.description,
+                    date: formattedDate.toJSDate(),
+                    capacity: data.capacity,
+                    type: data.type,
+                    reward: reward,
+                    // organizer: {
+                    //     connect: {
+                    //         id: data.organizerId
+                    //     }
+                    // }
+                }
+            });
+            return Ok('Evento criado com sucesso');
+        } catch (error) {
+            return Err('Failed to create event');
+        }
     }
 }

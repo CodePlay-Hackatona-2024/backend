@@ -36,10 +36,10 @@ export class CreateEventModel {
     })
     type: string;
 
-    // @ApiProperty({
-    //     type: String,
-    //     description: 'Organizer ID',
-    //     example: 'clzh3p8hk00009e8rzhxvtube'
-    // })
-    // organizerId: string;
-}
+    @ApiProperty({
+        type: String,
+        description: 'Recompensa do evento',
+        example: 'Recompensa',
+    })
+    reward: string;
+
