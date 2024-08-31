@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Res } from '@nestjs/common';
+import {  Controller, Get, Res } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
+import { FetchItemsService } from 'src/common/providers/services/item/fetch-items.service';
 import { API_TAGS_CONTROLLER } from 'src/common/utils/enums/api-tags';
 
 @Controller(API_TAGS_CONTROLLER.ITEM.route)

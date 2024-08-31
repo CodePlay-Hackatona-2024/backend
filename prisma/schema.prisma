@@ -33,18 +33,11 @@ model Event {
   description String
   date        DateTime
   capacity    Int
-  reward      Int
-  type        EventTypes
-  organizer   User            @relation(fields: [organizerId], references: [id])
-  organizerId String
+  reward      Int?
+  type        String
+  organizer   User?            @relation(fields: [organizerId], references: [id])
+  organizerId String?
   done        Boolean
-}
-
-enum EventTypes {
-  TREINAMENTO
-  SIMULACAO
-  MUTIRAO
-  DOACAO
 }
 
 model Item {
