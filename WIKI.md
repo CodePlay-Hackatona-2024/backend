@@ -4,6 +4,10 @@ Equipe: Athos Enderle Puña, Gabriel André Souza Petry, Gabriel Saldanha de Neg
 
 Evento: 7ª Hackatona de Engenharia de Software  
 
+Em decorrência dos desastres cada vez mais constantes presenciados ao redor do mundo, torna-se evidente a necessidade de soluções para todas as fases desde a prevenção, o durante e o pós.  
+Um dos maiores problemas presentes é o comportamento reativo que assola a população como um todo, com que faz que gere mobilizações de maior expressão somente quando algum grupo próximo sofre daquele desastre, ou o indivíduo em si, assim como também pode ocorrer o caso do despreparo daquele que muitas vezes tem a intenção de auxiliar, porém não tem a capacitação necessária. 
+Por conta destas situações, decidimos criar uma plataforma cujo vai incentivar e estimular a educação e atos de prevenção a desastres por meio de recompensas.  
+
 Fluxo de trabalho com Git e Controle de Versões 
 Durante o desenvolvimento do projeto na hackatona, utilizamos o GitHub como nossa principal ferramenta de colaboração e controle de versões. Para facilitar o trabalho em equipe, dividimos nossa equipe em duas stacks principais: backend e frontend. Cada stack teve seu próprio repositório dedicado, permitindo uma organização mais clara e um foco específico nas necessidades de cada área. 
 
