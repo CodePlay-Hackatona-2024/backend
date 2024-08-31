@@ -17,7 +17,8 @@ model User {
   balance     Int
   password    String
   isOrganizer Boolean
-  events      Event[]
+  events      Event[] @relation("EventParticipants")
+  organizedEvents Event[] @relation("EventOrganizer")
   items       Item[]
 }
 
@@ -29,8 +30,9 @@ model Event {
   capacity    Int
   reward     Int
   type        String
-  organizer   User?           @relation(fields: [organizerId], references: [id])
+  organizer   User?           @relation("EventOrganizer", fields: [organizerId], references: [id])
   organizerId String?
+  participants User[]        @relation("EventParticipants")
   done        Boolean?        @default(false)
 }
 
