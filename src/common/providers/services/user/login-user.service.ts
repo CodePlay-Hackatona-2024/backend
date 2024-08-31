@@ -29,6 +29,6 @@ export class LoginUserService {
       return Err('Informações de login inválidas');
     }
 
-    return Ok("Login efetuado com sucesso");
+    return Ok(existing_user.id);
   }
 }

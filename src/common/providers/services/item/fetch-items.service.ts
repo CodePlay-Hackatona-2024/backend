@@ -7,7 +7,9 @@ export class FetchItemsService {
   constructor(private readonly database: PrismaService) {}
 
   async fetch_items(): Promise<Result<string, string>> {
-    const items = await this.database.item.findMany();
+    const items = await this.database.item.findMany({
+      include: { partner: true },
+    });
     return Ok(JSON.stringify(items));
   }
 }

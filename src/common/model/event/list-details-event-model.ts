@@ -50,6 +50,28 @@ export class ListDetailsEventModel {
     reward: number;
 
     @ApiProperty({
+        type: String,
+        description: 'Local do evento',
+        example: 'Local',
+    })
+    local: string;
+
+    @ApiProperty({
+        type: String,
+        description: 'Imagem do evento',
+        example: 'Imagem',
+        required: false
+    })
+    photo_url: string;
+
+    @ApiProperty({
+        type: String,
+        description: 'Código de confirmação do evento',
+        example: '123456',
+    })
+    confirmation_code: string;
+
+    @ApiProperty({
         type: Boolean,
         description: 'Ta registrado?',
         example: true,
