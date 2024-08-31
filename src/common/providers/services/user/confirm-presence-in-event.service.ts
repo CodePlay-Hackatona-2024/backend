@@ -32,10 +32,6 @@ export class ConfirmPresenceInEventService {
             return Err('Usuário não encontrado');
         }
 
-        if (!user.events.includes(event)) {
-            return Err('Usuário não está inscrito no evento');
-        }
-
         if (event.confirmation_code !== confirmation_code) {
             return Err('Código de confirmação inválido');
         }
