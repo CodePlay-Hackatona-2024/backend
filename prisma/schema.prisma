@@ -36,12 +36,9 @@ model Event {
 
 model Item {
   item_id         String   @id
-  supplier        String
+  name            String
   description     String
-  physicalBalance Int      @default(0)
-  fiscalBalance   Int      @default(0)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  value           Int
   partner         Partner? @relation(fields: [partnetId], references: [id])
   partnetId       String?
   user            User?    @relation(fields: [userId], references: [id])
