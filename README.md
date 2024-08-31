@@ -23,43 +23,48 @@ O uso estratégico do GitHub, aliado a um esquema de branches bem definido, foi 
 
 Banco de dados representado através do Diagrama lógico relacional:  
 O modelo lógico é utilizado para definir a estrutura dos elementos de dados e estabelecer os relacionamentos entre eles. Ele aprimora os elementos conceituais do modelo de dados ao adicionar mais detalhes. A principal vantagem de usar um modelo de dados lógico é que ele serve como base sólida para a construção do modelo físico. 
+
+
 Tabela: Users 
-user_id: CHAR(25) NOT NULL 
-document: VARCHAR(14) NOT NULL 
-name: VARCHAR(10) NOT NULL 
-created_at: TIMESTAMP NOT NULL 
-balance: INT NOT NULL 
-isOrganizer: INT NOT NULL 
-email: VARCHAR(100) NOT NULL 
-password: VARCHAR(30) NOT NULL 
+user_id: CHAR(25) NOT NULL;
+document: VARCHAR(14) NOT NULL;
+name: VARCHAR(10) NOT NULL; 
+created_at: TIMESTAMP NOT NULL; 
+balance: INT NOT NULL; 
+isOrganizer: INT NOT NULL; 
+email: VARCHAR(100) NOT NULL; 
+password: VARCHAR(30) NOT NULL; 
+
 
 Tabela: Events 
-event_id: CHAR(25) NOT NULL 
-title: VARCHAR(50) NOT NULL 
-description: VARCHAR(100) NOT NULL 
-date: DATE NOT NULL 
-capacity: INT NOT NULL 
-reward: INT NOT NULL 
-type: VARCHAR(12) NOT NULL 
-photo_url: VARCHAR(150) NOT NULL 
-local: VARCHAR(150) NOT NULL 
-confirmation_code: CHAR(6) NOT NULL 
-isRegistered: INT NOT NULL 
-done: INT NOT NULL 
-organizer: CHAR(25) FOREIGN KEY 
+event_id: CHAR(25) NOT NULL; 
+title: VARCHAR(50) NOT NULL; 
+description: VARCHAR(100) NOT NULL; 
+date: DATE NOT NULL; 
+capacity: INT NOT NULL; 
+reward: INT NOT NULL; 
+type: VARCHAR(12) NOT NULL; 
+photo_url: VARCHAR(150) NOT NULL;
+local: VARCHAR(150) NOT NULL; 
+confirmation_code: CHAR(6) NOT NULL; 
+isRegistered: INT NOT NULL; 
+done: INT NOT NULL; 
+organizer: CHAR(25) FOREIGN KEY; 
+
 
 Tabela: Items 
-item_id: CHAR(25) NOT NULL 
-name: VARCHAR(100) NOT NULL 
-description: VARCHAR(150) NOT NULL 
-value: INT NOT NULL 
-partner: CHAR(25) FOREIGN KEY 
-user_id: CHAR(25) FOREIGN KEY 
+item_id: CHAR(25) NOT NULL;
+name: VARCHAR(100) NOT NULL; 
+description: VARCHAR(150) NOT NULL; 
+value: INT NOT NULL; 
+partner: CHAR(25) FOREIGN KEY; 
+user_id: CHAR(25) FOREIGN KEY;
+
 
 Tabela: Partners 
-partner_id: CHAR(25) NOT NULL 
-name: VARCHAR(100) NOT NULL 
-logo: VARCHAR(60) 
+partner_id: CHAR(25) NOT NULL; 
+name: VARCHAR(100) NOT NULL; 
+logo: VARCHAR(60); 
 
 Arquitetura Backend:  
 A arquitetura do backend que desenvolvemos é projetada de forma modular e organizada, com uma clara separação de responsabilidades entre as camadas de services e controllers. Essa estrutura proporciona diversos benefícios ao desenvolvimento e manutenção do sistema. 
