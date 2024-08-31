@@ -54,7 +54,7 @@ export class ListDetailsEventModel {
         description: 'Local do evento',
         example: 'Local',
     })
-    location: string;
+    local: string;
 
     @ApiProperty({
         type: String,
@@ -62,14 +62,14 @@ export class ListDetailsEventModel {
         example: 'Imagem',
         required: false
     })
-    image: string;
+    photo_url: string;
 
     @ApiProperty({
         type: String,
         description: 'Código de confirmação do evento',
         example: '123456',
     })
-    confirmationCode: string;
+    confirmation_code: string;
 
     @ApiProperty({
         type: Boolean,
