@@ -30,6 +30,7 @@ model Event {
   capacity    Int
   reward     Int
   type        String
+  isRegistered Boolean?       @default(false)
   organizer   User?           @relation("EventOrganizer", fields: [organizerId], references: [id])
   organizerId String?
   participants User[]        @relation("EventParticipants")
