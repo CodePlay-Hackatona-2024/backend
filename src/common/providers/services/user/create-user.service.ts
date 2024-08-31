@@ -17,7 +17,7 @@ export class CreateUserService {
       where: { email },
     });
     if (existing_user) {
-      return Err('O email  informado já esta sendo utilizado');
+      return Err('O email informado já esta sendo utilizado');
     }
 
     const createdUser = await this.database.user.create({
