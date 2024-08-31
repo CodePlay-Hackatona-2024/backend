@@ -1,85 +1,71 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+WIKI 
+Projeto: Help Chain 
+Equipe: Athos Enderle Puña, Gabriel André Souza Petry, Gabriel Saldanha de Negre, Guilherme Vicente Vianna Kuhn, João Pedro Tiellet Demari, Leonardo Bertoletti. 
+Evento: 7ª Hackatona de Engenharia de Software  
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Fluxo de trabalho com Git e Controle de Versões 
+Durante o desenvolvimento do projeto na hackatona, utilizamos o GitHub como nossa principal ferramenta de colaboração e controle de versões. Para facilitar o trabalho em equipe, dividimos nossa equipe em duas stacks principais: backend e frontend. Cada stack teve seu próprio repositório dedicado, permitindo uma organização mais clara e um foco específico nas necessidades de cada área. 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Estratégia Utilizada nas Branches para Evitar Conflitos 
+Um dos principais desafios em projetos em equipe, especialmente em ambientes de alta pressão como uma hackatona, é a gestão eficaz das branches. A falta de uma estrutura clara para as branches pode resultar em conflitos de código, o que pode ser um grande dificultador para o progresso do projeto. Com base nisso, optamos por um fluxo de trabalho simples, mas eficaz, adaptado ao contexto da hackatona. Nossa prioridade era manter o equilíbrio entre simplicidade e eficiência, evitando processos complexos que poderiam consumir tempo precioso. 
 
-## Description
+Padrão de Nomenclatura das Branches 
+Para manter a clareza e a organização, seguimos um padrão de nomenclatura específico para as branches em ambos os repositórios: 
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A main é a branch principal que contém o código que está pronto para ser colocado em produção. Nossa política foi manter esta branch sempre estável e livre de erros, o que significa desenvolvimento direto não foi realizado nela. Qualquer alteração destinada à main passou primeiro por uma outra camada de validação, garantindo que apenas código testado e funcional fosse mesclado. 
 
-## Project setup
+A develop é a branch onde a maior parte do desenvolvimento ativo ocorreu. Aqui, o código podia ser instável ou precisar de ajustes, sem o risco de comprometer a versão estável mantida na main. A develop funcionou como um ambiente de staging, onde as funcionalidades eram integradas e testadas antes de serem promovidas à main. Essa abordagem nos permitiu isolar problemas e garantir que a versão principal do projeto permanecesse sempre operacional.  Ao adotar um fluxo de trabalho simplificado, conseguimos minimizar os riscos de conflitos e agilizar o processo de desenvolvimento. Conclusão 
 
-```bash
-$ npm install
-```
+O uso estratégico do GitHub, aliado a um esquema de branches bem definido, foi crucial para o sucesso de nosso projeto. Conseguimos garantir uma colaboração eficiente entre as equipes de backend e frontend. 
 
-## Compile and run the project
+ 
 
-```bash
-# development
-$ npm run start
+Banco de dados representado através do Diagrama lógico relacional:  
+O modelo lógico é utilizado para definir a estrutura dos elementos de dados e estabelecer os relacionamentos entre eles. Ele aprimora os elementos conceituais do modelo de dados ao adicionar mais detalhes. A principal vantagem de usar um modelo de dados lógico é que ele serve como base sólida para a construção do modelo físico. 
+Tabela: Users 
+user_id: CHAR(25) NOT NULL 
+document: VARCHAR(14) NOT NULL 
+name: VARCHAR(10) NOT NULL 
+created_at: TIMESTAMP NOT NULL 
+balance: INT NOT NULL 
+isOrganizer: INT NOT NULL 
+email: VARCHAR(100) NOT NULL 
+password: VARCHAR(30) NOT NULL 
 
-# watch mode
-$ npm run start:dev
+Tabela: Events 
+event_id: CHAR(25) NOT NULL 
+title: VARCHAR(50) NOT NULL 
+description: VARCHAR(100) NOT NULL 
+date: DATE NOT NULL 
+capacity: INT NOT NULL 
+reward: INT NOT NULL 
+type: VARCHAR(12) NOT NULL 
+photo_url: VARCHAR(150) NOT NULL 
+local: VARCHAR(150) NOT NULL 
+confirmation_code: CHAR(6) NOT NULL 
+isRegistered: INT NOT NULL 
+done: INT NOT NULL 
+organizer: CHAR(25) FOREIGN KEY 
 
-# production mode
-$ npm run start:prod
-```
+Tabela: Items 
+item_id: CHAR(25) NOT NULL 
+name: VARCHAR(100) NOT NULL 
+description: VARCHAR(150) NOT NULL 
+value: INT NOT NULL 
+partner: CHAR(25) FOREIGN KEY 
+user_id: CHAR(25) FOREIGN KEY 
 
-## Run tests
+Tabela: Partners 
+partner_id: CHAR(25) NOT NULL 
+name: VARCHAR(100) NOT NULL 
+logo: VARCHAR(60) 
 
-```bash
-# unit tests
-$ npm run test
+Arquitetura Backend:  
+A arquitetura do backend que desenvolvemos é projetada de forma modular e organizada, com uma clara separação de responsabilidades entre as camadas de services e controllers. Essa estrutura proporciona diversos benefícios ao desenvolvimento e manutenção do sistema. 
 
-# e2e tests
-$ npm run test:e2e
+Services: Essa camada é responsável por centralizar toda a lógica de negócios e gerenciar o acesso ao banco de dados. Isso significa que todas as regras de negócio, validações, e interações com o banco são realizadas aqui. Ao manter essa lógica isolada nos serviços, conseguimos facilitar a manutenção e a escalabilidade do código. Além disso, essa abordagem permite que possamos testar a lógica de negócios de forma isolada, sem nos preocuparmos com os detalhes da camada de apresentação (como rotas ou respostas HTTP). 
 
-# test coverage
-$ npm run test:cov
-```
+Controllers: Os controladores funcionam como uma ponte entre as requisições feitas pelos usuários e os serviços que contêm a lógica de negócios. Eles recebem as requisições, passam os dados necessários para os serviços, e retornam as respostas apropriadas. Como a lógica de negócios já está encapsulada nos services, os controllers podem se concentrar em gerenciar as requisições e respostas, mantendo seu código mais simples e direto. 
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Documentação Automática com Swagger: Um aspecto importante dessa arquitetura é o uso do Swagger para documentar automaticamente as rotas da API. Nos controllers, utilizamos decoradores como @ApiOperation, @ApiParam, e @ApiResponse para fornecer uma documentação clara e precisa dos endpoints. Isso não só facilita a vida dos desenvolvedores que irão consumir a API, mas também melhora a comunicação dentro da equipe, tornando o sistema mais transparente e compreensível. 
+Essa arquitetura, portanto, não só promove boas práticas de desenvolvimento como também prepara o sistema para evoluir de forma sustentável, mantendo a qualidade do código e a eficiência operacional ao longo do tempo. 
