@@ -42,4 +42,4 @@ export class CreateEventModel {
         example: 'Recompensa',
     })
     reward: string;
-
+}
