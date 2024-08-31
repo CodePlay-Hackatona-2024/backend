@@ -1,5 +1,7 @@
 Projeto: Help Chain 
+
 Equipe: Athos Enderle Puña, Gabriel André Souza Petry, Gabriel Saldanha de Negre, Guilherme Vicente Vianna Kuhn, João Pedro Tiellet Demari, Leonardo Bertoletti. 
+
 Evento: 7ª Hackatona de Engenharia de Software  
 
 Fluxo de trabalho com Git e Controle de Versões 
