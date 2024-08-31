@@ -46,6 +46,6 @@ export class LoginUserController {
       res.status(400);
       return { message: result.unwrapErr() };
     }
-    return { id: result.unwrap() };
+    return { user: result.unwrap() };
   }
 }

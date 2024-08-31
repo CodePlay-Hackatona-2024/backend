@@ -17,6 +17,18 @@ export class LoginUserService {
     if (!existing_user) {
       return Err('Informações de login inválidas');
     }
+
+    const is_password_valid = await Encrypt.compare_password(
+      password,
+      existing_user.password,
+    );
+
+    console.log(password, existing_user.password);
+
+    if (!is_password_valid) {
+      return Err('Informações de login inválidas');
+    }
+
     return Ok(JSON.stringify(existing_user));
   }
 }
