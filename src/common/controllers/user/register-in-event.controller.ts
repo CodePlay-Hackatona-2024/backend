@@ -11,24 +11,24 @@ export class RegisterInEventController {
 
   @Patch('/register/:event_id/:user_id')
   @ApiOperation({
-    summary: 'Validar login do usuário',
-    description: 'Este endpoint permite a validação do login de um usuário.',
+    summary: 'Registrar o usuário em um evento',
+    description: 'Este endpoint realiza a inscrição de um usuário em um evento.',
   })
   @ApiResponse({
     status: 200,
-    description: 'Login válidado com sucesso',
+    description: 'Usuário registrado no evento com sucesso',
     schema: {
       default: [
-        'Login efetuado com sucesso',
+        'Usuário registrado no evento com sucesso',
       ],
     },
   })
   @ApiResponse({
     status: 400,
-    description: 'Login não validado',
+    description: 'Falha no registro do usuário no evento',
     schema: {
       default: [
-        'Informações de login inválidos',
+        'Usuário já registrado no evento',
       ],
     },
   })
