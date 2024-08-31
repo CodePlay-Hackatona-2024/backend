@@ -27,11 +27,16 @@ export class UpdateBalanceService {
         }
 
         const value = existing_item.value;
-    
+
+        if(existing_user.balance < value) {
+            return Err('Saldo insuficiente');
+        }
+        
+        const new_balance = existing_user.balance - value >= 0 ? existing_user.balance - value : 0;
         const updated_user = await this.database.user.update({
             where: { id: user_id },
             data: {
-                balance: existing_user.balance - value,
+                balance: new_balance,
                 items: {
                     connect: { item_id: item_id },
                 }
