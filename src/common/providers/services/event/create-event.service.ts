@@ -17,6 +17,7 @@ export class CreateEventService {
             return Err('Invalid date format');
         }
 
+
         // Convert the event type to lower case for case-insensitive comparison
         const eventType = data.type.toLowerCase();
 
@@ -36,6 +37,7 @@ export class CreateEventService {
                 return Err('Invalid event type');
         }
 
+
         try {
             const createdEvent = await this.database.event.create({
                 data: {
@@ -45,13 +47,14 @@ export class CreateEventService {
                     capacity: data.capacity,
                     type: data.type,
                     reward: reward,
-                    local: data.location,
-                    photo_url: data.image,
-                    confirmation_code: Math.random().toString(36).substring(7)
+                    photo_url: data.photo_url,
+                    local: data.local,
+                    confirmation_code: data.confirmation_code
                 }
             });
             return Ok('Evento criado com sucesso');
         } catch (error) {
+            console.log("error, ", error);
             return Err('Failed to create event');
         }
     }

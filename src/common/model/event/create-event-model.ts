@@ -38,17 +38,10 @@ export class CreateEventModel {
 
     @ApiProperty({
         type: String,
-        description: 'Recompensa do evento',
-        example: 'Recompensa',
-    })
-    reward: string;
-
-    @ApiProperty({
-        type: String,
         description: 'Local do evento',
         example: 'Local',
     })
-    location: string;
+    local: string;
 
     @ApiProperty({
         type: String,
@@ -56,6 +49,14 @@ export class CreateEventModel {
         example: 'Imagem',
         required: false
     })
-    image: string;
+    photo_url: string;
+
+    @ApiProperty({
+        type: String,
+        description: 'Código de confirmação',
+        example: '134564'
+    })
+    confirmation_code: string;
+
 
 }
