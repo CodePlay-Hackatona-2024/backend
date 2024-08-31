@@ -45,11 +45,9 @@ export class CreateEventService {
                     capacity: data.capacity,
                     type: data.type,
                     reward: reward,
-                    // organizer: {
-                    //     connect: {
-                    //         id: data.organizerId
-                    //     }
-                    // }
+                    local: data.location,
+                    photo_url: data.image,
+                    confirmation_code: Math.random().toString(36).substring(7)
                 }
             });
             return Ok('Evento criado com sucesso');

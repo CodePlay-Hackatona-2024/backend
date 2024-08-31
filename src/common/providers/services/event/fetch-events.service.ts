@@ -12,7 +12,6 @@ export class FetchEventsService {
         user_id: string | null,
     ): Promise<Result<FetchEventsModel[], string>> {
         try {
-            console.log(user_id);
             const events = await this.database.event.findMany();
             if (user_id !== '{id}') {
                 const user = await this.database.user.findUnique({
