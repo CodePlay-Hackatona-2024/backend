@@ -11,6 +11,10 @@ export const API_TAGS_CONTROLLER = {
       name: 'Event',
       route: '/event',
     },
+    PARTNER: {
+      name: 'Partner',
+      route: '/partner',
+    }
   } as const;
   
   type ApiTagsTitleUnion =
