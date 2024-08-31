@@ -14,27 +14,28 @@ datasource db {
 }
 
 model User {
-  id              String               @id @default(cuid())
-  document             String               @unique
-  name                 String
-  email                String               @unique
-  createdAt            DateTime             @default(now())
-  balance              Int
-  password             String
-  isOrganizer          Boolean
-  events               Event[]
+  id          String   @id @default(cuid())
+  document    String   @unique
+  name        String
+  email       String   @unique
+  createdAt   DateTime @default(now())
+  balance     Int
+  password    String
+  isOrganizer Boolean
+  events      Event[]
+  items       Item[]
 }
 
 model Event {
-  event_id           String          @id @default(cuid())
-  title        String
-  description  String
-  date         DateTime
-  capacity     Int
-  reward       Int
-  type         CollectionTypes
-  organizer    User      @relation(fields: [organizerId], references: [id])
-  organizerId  String
+  event_id    String          @id @default(cuid())
+  title       String
+  description String
+  date        DateTime
+  capacity    Int
+  reward      Int
+  type        CollectionTypes
+  organizer   User            @relation(fields: [organizerId], references: [id])
+  organizerId String
   done        Boolean
 }
 
@@ -46,20 +47,22 @@ enum CollectionTypes {
 }
 
 model Item {
-  item_id             String               @id
-  supplier         String
-  description      String
-  physicalBalance  Int                  @default(0)
-  fiscalBalance    Int                  @default(0)
-  createdAt        DateTime             @default(now())
-  updatedAt        DateTime             @updatedAt
-  partner          Partner?                @relation(fields: [partnetId], references: [id])
-  partnetId    String?
+  item_id         String   @id
+  supplier        String
+  description     String
+  physicalBalance Int      @default(0)
+  fiscalBalance   Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  partner         Partner? @relation(fields: [partnetId], references: [id])
+  partnetId       String?
+  user            User?    @relation(fields: [userId], references: [id])
+  userId          String?
 }
 
 model Partner {
-  id  String       @id
-  name        String
-  logo        Int
-  items       Item[]
+  id    String @id
+  name  String
+  logo  Int
+  items Item[]
 }
