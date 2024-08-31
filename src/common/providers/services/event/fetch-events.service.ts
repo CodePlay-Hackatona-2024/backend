@@ -13,7 +13,6 @@ export class FetchEventsService {
     ): Promise<Result<FetchEventsModel[], string>> {
         try {
             const events = await this.database.event.findMany();
-            console.log('passa o findMany');
             const user = await this.database.user.findUnique({
                 where: { id: user_id },
                 include: {
@@ -25,7 +24,7 @@ export class FetchEventsService {
             if (!user) {
                 return Err('User not found');
             }
-            console.log(user);
+
             user.events.forEach(event => {
                 events.forEach(e => {
                     if (e.event_id === event.event_id) {
@@ -33,7 +32,6 @@ export class FetchEventsService {
                     }
                 });
             });
-            console.log('passa o for');
 
             const formattedEvents = events.map(event => {
                 const formattedDate = DateTime.fromJSDate(event.date)
@@ -47,6 +45,7 @@ export class FetchEventsService {
 
             return Ok(formattedEvents);
         } catch (error) {
+            console.log(error);
             return Err('Failed to fetch events');
         }
     }
