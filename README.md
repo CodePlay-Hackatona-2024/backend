@@ -94,7 +94,7 @@ Os controladores funcionam como uma ponte entre as requisições feitas pelos us
 Um aspecto importante dessa arquitetura é o uso do Swagger para documentar automaticamente as rotas da API. Nos controllers, utilizamos decoradores como @ApiOperation, @ApiParam, e @ApiResponse para fornecer uma documentação clara e precisa dos endpoints. Isso não só facilita a vida dos desenvolvedores que irão consumir a API, mas também melhora a comunicação dentro da equipe, tornando o sistema mais transparente e compreensível. 
 Essa arquitetura, portanto, não só promove boas práticas de desenvolvimento como também prepara o sistema para evoluir de forma sustentável, mantendo a qualidade do código e a eficiência operacional ao longo do tempo. 
 
-### Arquitetura Frontend
+## Arquitetura Frontend:
 A arquitetura do frontend que desenvolvemos é projetada de forma modular e organizada, com uma clara separação de responsabilidades entre os componentes, páginas, contextos e bibliotecas de utilitários. Essa estrutura proporciona diversos benefícios ao desenvolvimento e manutenção do sistema.
 
 ### Componentes
