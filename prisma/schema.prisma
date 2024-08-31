@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -33,18 +27,11 @@ model Event {
   description String
   date        DateTime
   capacity    Int
-  reward      Int
-  type        EventTypes
-  organizer   User            @relation(fields: [organizerId], references: [id])
-  organizerId String
-  done        Boolean
-}
-
-enum EventTypes {
-  TREINAMENTO
-  SIMULACAO
-  MUTIRAO
-  DOACAO
+  reward     Int?
+  type        String
+  organizer   User?           @relation(fields: [organizerId], references: [id])
+  organizerId String?
+  done        Boolean?        @default(false)
 }
 
 model Item {

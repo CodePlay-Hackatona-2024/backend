@@ -3,6 +3,10 @@ export const API_TAGS_CONTROLLER = {
       name: 'User',
       route: '/user',
     },
+    EVENT: {
+      name: 'Event',
+      route: '/event',
+    }
   } as const;
   
   type ApiTagsTitleUnion =
@@ -18,6 +22,10 @@ export const API_TAGS_CONTROLLER = {
     {
       title: 'User',
       description: 'Rotas que lidam com usuários',
+    },
+    {
+      title: 'Event',
+      description: 'Rotas que lidam com eventos',
     },
   ];
   
