@@ -1,6 +1,12 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class CreateEventModel {
+export class ListDetailsEventModel {
+    @ApiProperty({
+        type: String,
+        description: 'ID do evento',
+        example: '123456'
+    })
+    event_id: string;
     @ApiProperty({
         type: String,
         description: 'Título do evento',
@@ -37,10 +43,30 @@ export class CreateEventModel {
     type: string;
 
     @ApiProperty({
-        type: String,
+        type: Number,
         description: 'Recompensa do evento',
         example: 'Recompensa',
     })
-    reward: string;
+    reward: number;
 
+    @ApiProperty({
+        type: Boolean,
+        description: 'Ta registrado?',
+        example: true,
+    })
+    isRegistered: boolean;
+
+    @ApiProperty({
+        type: String,
+        description: 'ID do organizador',
+        example: '123456',
+    })
+    organizerId: string;
+
+    @ApiProperty({
+        type: Boolean,
+        description: 'Evento finalizado?',
+        example: true,
+    })
+    done: boolean;
 }

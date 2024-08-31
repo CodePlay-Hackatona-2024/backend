@@ -31,6 +31,7 @@
     "backend-hacka": "file:",
     "bcrypt": "^5.1.1",
     "luxon": "^3.5.0",
+    "prisma": "^5.19.0",
     "reflect-metadata": "^0.2.0",
     "rust-option": "^0.12.0",
     "rxjs": "^7.8.1"
