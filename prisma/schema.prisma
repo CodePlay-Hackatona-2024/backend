@@ -41,7 +41,7 @@ model Event {
 }
 
 model Item {
-  item_id         String   @id
+  item_id         String   @id @default(cuid())
   name            String
   description     String
   value           Int
@@ -52,7 +52,7 @@ model Item {
 }
 
 model Partner {
-  id    String @id
+  id    String @id @default(cuid())
   name  String
   logo  String
   items Item[]

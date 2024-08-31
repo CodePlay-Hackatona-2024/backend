@@ -10,7 +10,7 @@ export class LoginUserService {
   async login_user(
     email: string,
     password: string,
-  ): Promise<Result<string, string>> {
+  ): Promise<Result<{id: string, name: string, balance: number}, string>> {
     const existing_user = await this.database.user.findUnique({
         where: { email },
     });
@@ -29,6 +29,6 @@ export class LoginUserService {
       return Err('Informações de login inválidas');
     }
 
-    return Ok(existing_user.id);
+    return Ok({id: existing_user.id, name: existing_user.name, balance: existing_user.balance});
   }
 }
