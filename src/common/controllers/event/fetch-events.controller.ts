@@ -17,7 +17,7 @@ export class FetchEventsController {
     @ApiParam({
         name: 'id',
         description: 'ID do usuário',
-        required: true,
+        required: false,
         schema: {
             type: 'string',
             example: 'clzh3p8hk00009e8rzhxvtube',
