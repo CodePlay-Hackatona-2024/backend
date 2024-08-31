@@ -54,6 +54,6 @@ model Item {
 model Partner {
   id    String @id
   name  String
-  logo  Int
+  logo  String
   items Item[]
 }
