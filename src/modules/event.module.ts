@@ -4,11 +4,13 @@ import { CreateEventService } from "src/common/providers/services/event/create-e
 import { PrismaModule } from "./database.module";
 import { FetchEventsService } from "src/common/providers/services/event/fetch-events.service";
 import { FetchEventsController } from "src/common/controllers/event/fetch-events.controller";
+import { ListDetailsEventService } from "src/common/providers/services/event/list-details-event.service";
+import { ListDetailsEventController } from "src/common/controllers/event/list-details-event.controller";
 
 @Module({
     imports: [PrismaModule],
-    providers: [CreateEventService, FetchEventsService],
-    controllers: [CreateEventController, FetchEventsController]  
+    providers: [CreateEventService, FetchEventsService, ListDetailsEventService],
+    controllers: [CreateEventController, FetchEventsController, ListDetailsEventController]  
 })
 
 export class EventModule {}
