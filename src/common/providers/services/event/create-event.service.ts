@@ -49,7 +49,7 @@ export class CreateEventService {
                     reward: reward,
                     photo_url: data.photo_url,
                     local: data.local,
-                    confirmation_code: data.confirmation_code
+                    confirmation_code: Math.random().toString(36).substring(7)
                 }
             });
             return Ok('Evento criado com sucesso');

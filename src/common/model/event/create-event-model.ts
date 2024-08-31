@@ -51,12 +51,5 @@ export class CreateEventModel {
     })
     photo_url: string;
 
-    @ApiProperty({
-        type: String,
-        description: 'Código de confirmação',
-        example: '134564'
-    })
-    confirmation_code: string;
-
 
 }
