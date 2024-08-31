@@ -10,11 +10,13 @@ import { UpdateBalanceService } from "src/common/providers/services/user/update-
 import { UpdateBalanceController } from "src/common/controllers/user/update-balance.controller";
 import { ConfirmPresenceInEventService } from "src/common/providers/services/user/confirm-presence-in-event.service";
 import { ConfirmPresenceInEventController } from "src/common/controllers/user/confirm-presence-in-event.controller";
+import { GetUserDetailsService } from "src/common/providers/services/user/get-user-details.service";
+import { GetUserDetailsController } from "src/common/controllers/user/get-user-details.controller";
 
 @Module({
     imports: [PrismaModule],
-    providers: [CreateUserService, LoginUserService, RegisterInEventService, UpdateBalanceService, ConfirmPresenceInEventService],
-    controllers: [CreateUserController, LoginUserController, RegisterInEventController, UpdateBalanceController, ConfirmPresenceInEventController]
+    providers: [CreateUserService, LoginUserService, RegisterInEventService, UpdateBalanceService, ConfirmPresenceInEventService, GetUserDetailsService],
+    controllers: [CreateUserController, LoginUserController, RegisterInEventController, UpdateBalanceController, ConfirmPresenceInEventController, GetUserDetailsController]
 })
 
 export class UserModule {}
