@@ -11,13 +11,12 @@ export class LoginUserService {
     email: string,
     password: string,
   ): Promise<Result<string, string>> {
-    const encrypted_password = await Encrypt.hash_password(password);
     const existing_user = await this.database.user.findUnique({
         where: { email },
     });
     if (!existing_user) {
       return Err('Informações de login inválidas');
     }
-    return Ok("Login efetuado com sucesso");
+    return Ok(JSON.stringify(existing_user));
   }
 }
